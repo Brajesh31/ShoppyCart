@@ -6,9 +6,10 @@ module.exports = {
     sourceType: "module",
     ecmaFeatures: { jsx: true },
   },
-  plugins: ["react-hooks", "react-refresh"],
+  plugins: ["react", "react-hooks", "react-refresh"],
   extends: ["eslint:recommended", "plugin:react-hooks/recommended"],
   rules: {
+    "react/jsx-uses-vars": "error",
     "no-unused-vars": ["error", {
       argsIgnorePattern: "^_",
       varsIgnorePattern: "^_",

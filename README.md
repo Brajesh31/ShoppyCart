@@ -1,52 +1,73 @@
-"# ShoppyCart-" 
 # ShoppyCart
 
-Welcome to ShoppyCart! ShoppyCart is an elegant shopping app where you can explore a variety of products and add them to your cart seamlessly.
+ShoppyCart is a React 18 shopping-cart interface built with Vite. It displays a static clothing catalog and lets visitors add products, adjust quantities, remove items by reducing quantity to zero, and view a calculated cart total.
 
-## Features:
+> This repository is a frontend learning project. The catalog is local demo data. There is no backend, user account, persistent cart, checkout, payment processing, inventory service, or order management.
 
-- **Product Display:** Browse through a wide range of products elegantly displayed.
-- **Add to Cart:** Easily add products to your shopping cart with a single click.
-- **Cart Management:** View your cart items and adjust quantities as needed.
-- **Total Price Calculation:** Automatically calculates and displays the total price of items in your cart.
-- **Responsive Design:** Enjoy a seamless shopping experience across different devices.
+## Features
+- Product catalog rendered from `src/dummy-products.js`.
+- Shared cart state through React Context and a reducer.
+- Add items and update quantities.
+- Cart modal and running total.
+- Responsive product presentation.
 
-## Technologies Used:
+## Stack
+- React 18
+- JavaScript and JSX
+- React Context API and `useReducer`
+- Vite 4
+- ESLint
 
-- React
-- JavaScript
-- Context API for state management
+## Project structure
+```text
+src/
+  components/       Header, Shop, Product, Cart and modal components
+  store/            Cart context and reducer
+  assets/           Product imagery
+  dummy-products.js Static product fixtures
+  App.jsx           Application composition
+  main.jsx          Vite entry point
+```
 
-## Components:
+## Requirements
+Use Node.js and npm. The repository includes `package-lock.json`.
 
-1. **App.jsx:** The main component orchestrating the header, shop, and product components.
-2. **Header.jsx:** Displays the app title, logo, and cart button. Allows users to access their shopping cart.
-3. **Shop.jsx:** Renders a list of products available for purchase.
-4. **Product.jsx:** Represents an individual product card with options to add it to the cart.
-5. **Cart.jsx:** Displays the items in the shopping cart, allows users to adjust quantities, and calculates the total price.
-6. **CartModal.jsx:** A modal component that shows the contents of the shopping cart.
-7. **ShoppingCartContext.jsx:** Provides context for managing the shopping cart state.
+## Setup
+```bash
+git clone https://github.com/Brajesh31/ShoppyCart.git
+cd ShoppyCart
+npm ci
+npm run dev
+```
 
-## How to Use:
+Open the local URL printed by Vite.
 
-1. Explore the products displayed on the shop page.
-2. Click on "Add to Cart" button to add products to your shopping cart.
-3. View your shopping cart by clicking on the cart icon in the header.
-4. Adjust the quantities of items in your cart as needed.
-5. Proceed to checkout when you're ready to complete your purchase.
+## Scripts
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Build the production bundle |
+| `npm run preview` | Preview the production bundle |
+| `npm run lint` | Run ESLint with warnings treated as errors |
 
-Feel free to customize and enhance ShoppyCart to suit your needs. Happy shopping!
+## Cart behavior
+The cart state is held in memory by `CartContextProvider`. The reducer handles `ADD_ITEM` and `UPDATE_ITEM` actions. Refreshing the browser resets the cart. Product and price data are client-side fixtures and must never be treated as authoritative prices for real transactions.
 
-## Screenshots
+## Validation
+```bash
+npm ci
+npm run lint
+npm run build
+```
 
-#### Landing Page
-![Landing Page](./screenshots/LandingPage.png)
+## Limitations and security
+- No server-side catalog or pricing validation.
+- No checkout or payment integration.
+- No persistent cart or customer account.
+- Client-side values can be changed by visitors.
+- Do not add real customer or payment data to this project.
 
-#### Cart Modal
-![Cart Modal](./screenshots/ShoppingCartModal.png)
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md), and [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
-## License
-
-This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
-
-Last updated: 2026-11-13 12:48 UTC
+## Contributing and license
+Read [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under MIT, see [LICENSE](LICENSE).

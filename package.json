@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint": "eslint src tests --ext .js,.jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.js"
   },
   "dependencies": {
     "react": "^18.2.0",

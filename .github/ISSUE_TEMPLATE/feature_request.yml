@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest an improvement to ShoppyCart.
+description: Suggest a catalog, cart, accessibility or documentation improvement.
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
@@ -10,8 +10,13 @@ body:
     validations:
       required: true
   - type: textarea
-    id: solution
+    id: proposal
     attributes:
-      label: Proposed behavior
+      label: Proposed behaviour
     validations:
       required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Data, dependencies and architecture impact
+      description: Clarify if this remains a frontend demo or requires a backend/commerce service.

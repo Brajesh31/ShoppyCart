@@ -1,19 +1,28 @@
 ## Summary
-Describe the change and why it is needed.
+Describe the change and the user-visible effect.
 
-## Type
-- [ ] Bug fix
-- [ ] Feature
+## Change type
+- [ ] Catalog
+- [ ] Cart behaviour
 - [ ] UI or accessibility
 - [ ] Documentation
-- [ ] Maintenance
+- [ ] Tests or CI
+- [ ] Dependency or maintenance
 
 ## Validation
+- [ ] `npm ci`
 - [ ] `npm run lint`
+- [ ] `npm test`
 - [ ] `npm run build`
-- [ ] Tested add, quantity update, and remove behavior
-- [ ] Tested empty cart and total calculation
-- [ ] No secrets or personal/payment data added
+- [ ] Tested add, increment, decrement and remove-at-zero
+- [ ] Tested empty cart and multi-line total
+- [ ] Tested dialog open/close
+- [ ] Checked mobile layout and keyboard focus
+
+## Data and security
+- [ ] No customer, credential or payment data added.
+- [ ] Client-side prices are not treated as authoritative transaction data.
+- [ ] Checkout remains disabled unless a trusted backend is implemented.
 
 ## Screenshots
 Include screenshots for visual changes.

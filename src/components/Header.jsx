@@ -1,45 +1,39 @@
-import { useRef } from 'react';
+import { useContext, useRef } from "react";
+import CartModal from "./CartModal.jsx";
+import { CartContext } from "../store/shopping-cart-context.jsx";
+import { getCartItemCount } from "../store/cart-reducer.js";
 
-import CartModal from './CartModal.jsx';
-
-import { CartContext } from '../store/shopping-cart-context.jsx';
-import { useContext } from 'react';
 export default function Header() {
-  const modal = useRef();
-  const {items} = useContext(CartContext);
-
-
-  const cartQuantity = items.length;
+  const modal = useRef(null);
+  const { items } = useContext(CartContext);
+  const cartQuantity = getCartItemCount(items);
 
   function handleOpenCartClick() {
-    modal.current.open();
+    modal.current?.open();
   }
 
-  let modalActions = <button>Close</button>;
-
+  let modalActions = <button type="submit">Close</button>;
   if (cartQuantity > 0) {
     modalActions = (
       <>
-        <button>Close</button>
-        <button>Checkout</button>
+        <button type="submit">Close</button>
+        <button type="button" disabled title="Checkout is not implemented in this demo.">
+          Checkout unavailable
+        </button>
       </>
     );
   }
 
   return (
     <>
-      <CartModal
-        ref={modal}
-        title="Your Cart"
-        actions={modalActions}
-      />
+      <CartModal ref={modal} title="Your Cart" actions={modalActions} />
       <header id="main-header">
         <div id="main-title">
-          <img src="logo.png" alt="Elegant model" />
+          <img src="/logo.png" alt="ShoppyCart logo" />
           <h1>Elegant Context</h1>
         </div>
         <p>
-          <button onClick={handleOpenCartClick}>Cart ({cartQuantity})</button>
+          <button type="button" onClick={handleOpenCartClick}>Cart ({cartQuantity})</button>
         </p>
       </header>
     </>

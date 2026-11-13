@@ -1,12 +1,13 @@
 name: Bug report
-description: Report a reproducible ShoppyCart issue.
+description: Report a reproducible ShoppyCart UI, catalog or cart issue.
 title: "[Bug]: "
 labels: ["bug"]
 body:
   - type: textarea
     id: summary
     attributes:
-      label: What happened?
+      label: Issue summary
+      description: Describe the affected screen or cart behaviour.
     validations:
       required: true
   - type: textarea
@@ -16,10 +17,27 @@ body:
     validations:
       required: true
   - type: input
-    id: browser
+    id: environment
     attributes:
-      label: Browser and version
+      label: Node.js, npm, browser and OS versions
+    validations:
+      required: true
   - type: textarea
-    id: evidence
+    id: expected
     attributes:
-      label: Screenshot or console output
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour and sanitized console output
+    validations:
+      required: true
+  - type: checkboxes
+    id: data-safety
+    attributes:
+      label: Data safety
+      options:
+        - label: I have not included customer data, addresses, credentials or payment information.
+          required: true

@@ -1,13 +1,21 @@
 # Security Policy
 
 ## Project scope
-ShoppyCart is a client-side demonstration. It has no backend, authentication, order processing, or payment integration.
 
-## Important limitations
-Product data and prices are bundled into the browser. Cart state is held in memory and can be modified by the visitor. Never use this client state as a trusted source for real orders or payments.
+ShoppyCart is a browser-only shopping-cart demonstration. It has no user accounts, backend, order processing, inventory service, or payment provider. Product prices and cart state are client-side and can be modified by visitors.
+
+Do not enter real customer information, addresses, passwords, card details, payment tokens or confidential data.
 
 ## Reporting
-Do not publish sensitive details in a public issue. Use GitHub private vulnerability reporting when available, or contact the repository owner privately with impact and reproduction steps.
 
-## Production requirements
-A real store requires server-side price and inventory validation, authenticated sessions, authorization, secure payment-provider integration, input validation, rate limits, and appropriate privacy controls.
+Do not post secrets or personal/payment data in public issues. Use GitHub private vulnerability reporting if available, or contact the repository owner privately with affected revision, impact and safe reproduction steps.
+
+## Contribution security expectations
+
+- Never place API keys or payment secrets in Vite client code.
+- Remember that `VITE_*` environment values are public in the browser bundle.
+- Do not trust client-side prices, quantities or totals for a real order.
+- Verify product and inventory state server-side in any future backend.
+- Use a reputable payment provider and verify webhooks server-side.
+- Minimize customer data and define retention before collection.
+- Review dependencies and static asset rights.

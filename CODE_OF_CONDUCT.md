@@ -1,10 +1,22 @@
 # Code of Conduct
 
-We expect respectful, constructive, and inclusive participation.
+## Standard
 
-- Be considerate and professional.
-- Critique code and ideas, not people.
-- Respect privacy and never publish personal or payment information.
-- Be open to questions and good-faith technical disagreement.
+Participation in ShoppyCart should be respectful, inclusive and constructive. Critique code, decisions and evidence rather than people.
 
-Harassment, discrimination, threats, personal attacks, and doxxing are unacceptable. Maintainers may remove contributions or restrict participation to protect the project community. Report serious incidents privately to the repository owner.
+## Expected behaviour
+
+- Be considerate, professional and collaborative.
+- Welcome good-faith questions and technical disagreement.
+- Provide actionable feedback and explain the reasoning behind suggestions.
+- Respect privacy and intellectual property.
+- Do not publish personal, customer or payment information.
+- Keep discussions focused on the repository.
+
+## Unacceptable behaviour
+
+Harassment, discrimination, threats, intimidation, doxxing, personal attacks, and deliberate disclosure of secrets are unacceptable.
+
+## Reporting and enforcement
+
+Report serious incidents privately to the repository owner. Maintainers may remove content or restrict participation to protect contributors and the project.
